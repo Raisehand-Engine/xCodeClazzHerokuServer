@@ -8,7 +8,7 @@ dotenv.config();
 
 const app = express();
 
-app.use(favicon(path.join(__dirname, 'images', 'database.png')));
+app.use(favicon(path.join(__dirname, 'images', 'logo192.png')));
 app.use(express.static('images'));
 app.use(express.static('styles'));
 app.use(bodyParser.json());

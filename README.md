@@ -2,23 +2,12 @@
 
 [x] Own domain
 [x] Server for xcodeclazz
+[x] Own Database [MongoDB]
 
-own routes
-own favicon
-
-node server
-heroku
-
-own db
-folder structures
-browser cache
-save the login crediential
-
-
-authentication
-file system / code save
-multiple files preview
-
+[x] Authentication
+[x] Browser cache
+[x] File System / Code Save
+[x] Multiple Files Preview
 
 /username
 / - code
