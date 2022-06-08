@@ -12,7 +12,7 @@ app.use(favicon(path.join(__dirname, 'images', 'database.png')));
 app.use(express.static('images'));
 app.use(express.static('styles'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -22,6 +22,10 @@ app.post(`/post`, (req, res) => {
     message: "You send these data's",
     body: req.body,
   });
+});
+
+app.get('/app', (req, res) => {
+  res.send({ message: 'success' });
 });
 
 app.get(`/`, (req, res) => {
