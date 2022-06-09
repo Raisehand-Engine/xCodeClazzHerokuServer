@@ -30,20 +30,23 @@ app.post(`/post`, (req, res) => {
 });
 
 app.get('/app', (req, res) => {
-  // res.send({ message: 'success' });
+  const resultLimitCharacter = 30000;
+  const errorLimitCharacter = 30000;
+
+  const forMinutes = 60000 /* 1 Min */ * 20; // should not take more then 20 minutes!
+  req.setTimeout(forMinutes); // because this route is going to do a lot havvy work!
+
   const { c, cpp, node, python, java } = require('compile-run');
-  const sourcecode = `
-for i in range(10000):
-  print(i)
-  `;
-  let resultPromise = python.runSource(sourcecode);
-  resultPromise
-    .then(result => {
-      res.send(result)
-    })
-    .catch(err => {
-      console.log(err);
-    });
+  python.runFile('./run.py', {
+    timeout: forMinutes,
+    compileTimeout: forMinutes,
+    stderrLimit: errorLimitCharacter,
+    stdoutLimit: resultLimitCharacter,
+    // stdin:
+    // compilerArgs:
+    // executionPath:
+    // compilationPath:
+  }, (err, result) => res.send({ err, result: { ...result, lang: 'python' } }));
 });
 
 app.get(`/`, (req, res) => {
