@@ -30,7 +30,20 @@ app.post(`/post`, (req, res) => {
 });
 
 app.get('/app', (req, res) => {
-  res.send({ message: 'success' });
+  // res.send({ message: 'success' });
+  const { c, cpp, node, python, java } = require('compile-run');
+  const sourcecode = `
+for i in range(10):
+  print(i)
+  `;
+  let resultPromise = python.runSource(sourcecode);
+  resultPromise
+    .then(result => {
+      res.send(result)
+    })
+    .catch(err => {
+      console.log(err);
+    });
 });
 
 app.get(`/`, (req, res) => {
