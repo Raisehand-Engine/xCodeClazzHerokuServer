@@ -37,7 +37,7 @@ app.get('/app', (req, res) => {
   req.setTimeout(forMinutes); // because this route is going to do a lot havvy work!
 
   const { c, cpp, node, python, java } = require('compile-run');
-  python.runFile('./run.py', {
+  python.runFile('./explorer/code/gouravgupta840@gmai.com/project_one/run.py', {
     timeout: forMinutes,
     compileTimeout: forMinutes,
     stderrLimit: errorLimitCharacter,
