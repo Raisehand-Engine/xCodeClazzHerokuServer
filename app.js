@@ -33,7 +33,7 @@ app.get('/app', (req, res) => {
   // res.send({ message: 'success' });
   const { c, cpp, node, python, java } = require('compile-run');
   const sourcecode = `
-for i in range(10):
+for i in range(10000):
   print(i)
   `;
   let resultPromise = python.runSource(sourcecode);
