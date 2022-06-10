@@ -2,7 +2,7 @@
   "name": "express-server",
   "version": "1.0.0",
   "description": "Basic server build with nodejs and express",
-  "main": "index.js",
+  "main": "server/app.js",
   "scripts": {
     "prod": "cross-env NODE_ENV=production npm start",
     "test": "cross-env NODE_ENV=testing mocha server/test --timeout 60000",
