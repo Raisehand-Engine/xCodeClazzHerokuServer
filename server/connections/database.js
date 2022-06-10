@@ -57,11 +57,11 @@ if (process.env.NODE_ENV === undefined) {
   connector.ENV = process.env.NODE_ENV;
 }
 
-// connecting to mongo server...
-const mongo = MongoClient.connect(connector.databaseUrl, { useNewUrlParser: true, useUnifiedTopology: true });
+// // connecting to mongo server...
+// const mongo = MongoClient.connect(connector.databaseUrl, { useNewUrlParser: true, useUnifiedTopology: true });
 
-mongoose.Promise = global.Promise;
-mongoose.connect(connector.databaseUrl, connector.mongoOptions, () => winston.info(JSON.stringify(connector, null, 4)));
+// mongoose.Promise = global.Promise;
+// mongoose.connect(connector.databaseUrl, connector.mongoOptions, () => winston.info(JSON.stringify(connector, null, 4)));
 
 require('./streams')({mongo, mongoose, connector});
 module.exports = { mongo, mongoose, connector, ObjectId };
