@@ -3,7 +3,7 @@ const { app } = require('./connections/express');
 const { SERVER_PORT } = require('./models/_Constants');
 const socket = require('../server/connections/sockets');
 
-// require('../uploads_directory')();
+require('../uploads_directory')();
 
 // require('./startup/environment')();
 // require('./startup/logging')();
