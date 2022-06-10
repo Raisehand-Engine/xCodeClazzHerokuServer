@@ -1,8 +1,8 @@
 {
-  "name": "express-server",
-  "version": "1.0.0",
-  "description": "Basic server build with nodejs and express",
+  "name": "xcodeclazz-server",
   "main": "server/app.js",
+  "description": "xCodeClazz server code project",
+  "version": "1.0.0",
   "scripts": {
     "prod": "cross-env NODE_ENV=production npm start",
     "test": "cross-env NODE_ENV=testing mocha server/test --timeout 60000",
