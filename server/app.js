@@ -3,14 +3,14 @@ const { app } = require('./connections/express');
 const { SERVER_PORT } = require('./models/_Constants');
 // const socket = require('../server/connections/sockets');
 
-// require('../uploads_directory')();
+require('../uploads_directory')();
 
-// require('./startup/environment')();
-// require('./startup/logging')();
-// require('./startup/config')();
-// require('./startup/mkdir')();
-// require('./startup/routes')(app);
-// require('./connections/database');
+require('./startup/environment')();
+require('./startup/logging')();
+require('./startup/config')();
+require('./startup/mkdir')();
+require('./startup/routes')(app);
+require('./connections/database');
 
 app.post(`/post`, (req, res) => {
   res.send({
