@@ -1,6 +1,6 @@
 const _ = require('lodash');
-const Utils = require('../helper/utils');
-const RESPONSE = require('../classes/RESPONSER');
+// const Utils = require('../helper/utils');
+// const RESPONSE = require('../classes/RESPONSER');
 // const {
 //   PLATFORMS,
 //   APP_NAMES,
@@ -20,7 +20,7 @@ const RESPONSE = require('../classes/RESPONSER');
 
 const not = (o) => !o;
 
-// module.exports = function (app) {
+module.exports = function (app) {
 
 //   // ROUTE NAMING CONVENTION -> {r_version}/api/{actor_name}/{collection_name-> singular or plural}/{purpose}
 //   // what data sending and how usefull that information for client
@@ -139,4 +139,4 @@ const not = (o) => !o;
 //   });
 
 //   app.use(errorGrabber); // catches all the error here, since we are using monkey patching
-// };
+};
