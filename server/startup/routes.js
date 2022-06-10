@@ -1,5 +1,5 @@
 const _ = require('lodash');
-// const Utils = require('../helper/utils');
+const Utils = require('../helper/utils');
 // const RESPONSE = require('../classes/RESPONSER');
 // const {
 //   PLATFORMS,
