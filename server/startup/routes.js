@@ -9,7 +9,7 @@ const {
 const image_containers = { image_container_xcodeclazz: 'xcodeclazz' }
 
 const { version } = require('../connections/express');
-// const { mongo, connector } = require('../connections/database');
+const { mongo, connector } = require('../connections/database');
 
 // const app_one_routes = require('../routes/app_one/routes');
 // more routes...
