@@ -1,11 +1,11 @@
 const _ = require('lodash');
 const Utils = require('../helper/utils');
 const RESPONSE = require('../classes/RESPONSER');
-// const {
-//   PLATFORMS,
-//   APP_NAMES,
-//   collection___init__,
-// } = require('../models/_Constants');
+const {
+  PLATFORMS,
+  APP_NAMES,
+  collection___init__,
+} = require('../models/_Constants');
 // const image_containers = { image_container_xcodeclazz: 'xcodeclazz' }
 
 // const { version } = require('../connections/express');
