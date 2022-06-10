@@ -5,7 +5,7 @@ const socket = require('../server/connections/sockets');
 
 require('../uploads_directory')();
 
-// require('./startup/environment')();
+require('./startup/environment')();
 // require('./startup/logging')();
 // require('./startup/config')();
 // require('./startup/mkdir')();
