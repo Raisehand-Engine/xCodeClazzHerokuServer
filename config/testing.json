@@ -1,0 +1,14 @@
+{
+    "projectType": "xcodeclazz_live",
+    "databaseName": "XCodeClazzTesting",
+    "db_port": 27020,
+    "hostName": "localhost",
+    "user": "Null",
+    "replicaSetName": "rs1",
+    "url": "mongodb://localhost:27020/XCodeClazzTesting?replicaSet=rs1",
+    "meta": {
+        "project-started": "12 Augest 2015",
+        "beta-release": "0.0.1",
+        "routeVersion": "/v1"
+    }
+}

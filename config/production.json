@@ -1,0 +1,14 @@
+{
+    "projectType": "xcodeclazz_live",
+    "databaseName": "XCodeClazzProduction",
+    "db_port": 27017,
+    "hostName": "cluster0.f5udx.mongodb.net",
+    "user": "GouravGupta",
+    "replicaSetName": "null",
+    "url": "mongodb+srv://username:password@cluster0.f5udx.mongodb.net/XCodeClazzProduction?retryWrites=true&w=majority",
+    "meta": {
+        "project-started": "26 March 2021",
+        "beta-release": "0.0.1",
+        "routeVersion": "/v1"
+    }
+}
