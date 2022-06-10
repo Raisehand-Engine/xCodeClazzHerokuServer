@@ -25,7 +25,8 @@ app.get(`/`, (req, res) => {
 
 const PORT = process.env.PORT || SERVER_PORT;
 const server = app.listen(PORT, () => {
-    winston.info(`Server is up and running at port: ${PORT}`);
+    // winston.info(`Server is up and running at port: ${PORT}`);
+    console.log(`Server is up and running at port: ${PORT}`)
 });
 socket({ server, app });
 
