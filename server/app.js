@@ -1,7 +1,7 @@
 const winston = require('winston');
 const { app } = require('./connections/express');
 const { SERVER_PORT } = require('./models/_Constants');
-const socket = require('../server/connections/sockets');
+// const socket = require('../server/connections/sockets');
 
 // require('../uploads_directory')();
 
@@ -9,7 +9,7 @@ const socket = require('../server/connections/sockets');
 // require('./startup/logging')();
 // require('./startup/config')();
 // require('./startup/mkdir')();
-require('./startup/routes')(app);
+// require('./startup/routes')(app);
 // require('./connections/database');
 
 app.post(`/post`, (req, res) => {
@@ -27,6 +27,6 @@ const PORT = process.env.PORT || SERVER_PORT;
 const server = app.listen(PORT, () => {
     winston.info(`Server is up and running at port: ${PORT}`);
 });
-socket({ server, app });
+// socket({ server, app });
 
 module.exports = app;
