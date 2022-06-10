@@ -8,7 +8,7 @@ require('../uploads_directory')();
 require('./startup/environment')();
 require('./startup/logging')();
 require('./startup/config')();
-// require('./startup/mkdir')();
+require('./startup/mkdir')();
 // require('./startup/routes')(app);
 // require('./connections/database');
 
