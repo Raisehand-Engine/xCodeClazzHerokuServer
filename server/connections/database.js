@@ -40,22 +40,22 @@ const connector = {
   meta: config.get('meta'),
 };
 
-// if (process.env.NODE_ENV === process.env.TESTING) {
-//   connector.databaseName = 'Testing';
-//   connector.ENV = process.env.TESTING
-// }
-// if (process.env.NODE_ENV === process.env.DEVELOPMENT) {
-//   connector.databaseName = 'Development';
-//   connector.ENV = process.env.DEVELOPMENT;
-// }
-// if (process.env.NODE_ENV === process.env.PRODUCTION) {
-//   connector.databaseName = 'Development';
-//   connector.ENV = process.env.PRODUCTION;
-// }
-// if (process.env.NODE_ENV === undefined) {
-//   process.env.NODE_ENV = process.env.DEVELOPMENT;
-//   connector.ENV = process.env.NODE_ENV;
-// }
+if (process.env.NODE_ENV === process.env.TESTING) {
+  connector.databaseName = 'Testing';
+  connector.ENV = process.env.TESTING
+}
+if (process.env.NODE_ENV === process.env.DEVELOPMENT) {
+  connector.databaseName = 'Development';
+  connector.ENV = process.env.DEVELOPMENT;
+}
+if (process.env.NODE_ENV === process.env.PRODUCTION) {
+  connector.databaseName = 'Development';
+  connector.ENV = process.env.PRODUCTION;
+}
+if (process.env.NODE_ENV === undefined) {
+  process.env.NODE_ENV = process.env.DEVELOPMENT;
+  connector.ENV = process.env.NODE_ENV;
+}
 
 // connecting to mongo server...
 const mongo = MongoClient.connect(connector.databaseUrl, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -63,5 +63,5 @@ const mongo = MongoClient.connect(connector.databaseUrl, { useNewUrlParser: true
 mongoose.Promise = global.Promise;
 mongoose.connect(connector.databaseUrl, connector.mongoOptions, () => winston.info(JSON.stringify(connector, null, 4)));
 
-require('./streams')({mongo, mongoose, connector});
+// require('./streams')({mongo, mongoose, connector});
 module.exports = { mongo, mongoose, connector, ObjectId };
