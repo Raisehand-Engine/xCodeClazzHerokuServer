@@ -5,7 +5,7 @@
     "hostName": "localhost",
     "user": "Null",
     "replicaSetName": "rs1",
-    "url": "mongodb+srv://xcodeclazz:hnPiCP0MZJA7pnWa@master.wwva8kk.mongodb.net/?retryWrites=true&w=majority",
+    "url": "mongodb://localhost:27020/XCodeClazzTesting?replicaSet=rs1",
     "meta": {
         "project-started": "12 Augest 2015",
         "beta-release": "0.0.1",

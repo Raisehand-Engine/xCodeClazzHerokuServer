@@ -5,7 +5,7 @@
     "hostName": "master.wwva8kk.mongodb.net",
     "user": "GouravGupta",
     "replicaSetName": "rs1",
-    "url": "mongodb+srv://xcodeclazz:hnPiCP0MZJA7pnWa@master.wwva8kk.mongodb.net/?retryWrites=true&w=majority",
+    "url": "mongodb://localhost:27020/XCodeClazzDevelopment?replicaSet=rs1",
     "meta": {
         "project-started": "26 March 2021",
         "beta-release": "0.0.1",
