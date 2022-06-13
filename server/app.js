@@ -9,7 +9,7 @@ require('./startup/environment')();
 require('./startup/logging')();
 require('./startup/config')();
 require('./startup/mkdir')();
-// require('./startup/routes')(app);
+require('./startup/routes')(app);
 require('./connections/database');
 
 app.post(`/post`, (req, res) => {
