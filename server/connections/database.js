@@ -63,5 +63,5 @@ const mongo = MongoClient.connect(connector.databaseUrl, { useNewUrlParser: true
 mongoose.Promise = global.Promise;
 mongoose.connect(connector.databaseUrl, connector.mongoOptions, () => winston.info(JSON.stringify(connector, null, 4)));
 
-// require('./streams')({mongo, mongoose, connector});
+require('./streams')({mongo, mongoose, connector});
 module.exports = { mongo, mongoose, connector, ObjectId };
