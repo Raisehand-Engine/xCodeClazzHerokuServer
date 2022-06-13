@@ -11,12 +11,12 @@ const image_containers = { image_container_xcodeclazz: 'xcodeclazz' }
 const { version } = require('../connections/express');
 const { mongo, connector } = require('../connections/database');
 
-// const app_one_routes = require('../routes/app_one/routes');
+const app_one_routes = require('../routes/app_one/routes');
 // more routes...
 
-const onlySandboxProject = require('../middlewares/onlySandboxProject');
-const checkMaintenance = require('../middlewares/checkMaintenance');
-const errorGrabber = require('../middlewares/errorGrabber');
+// const onlySandboxProject = require('../middlewares/onlySandboxProject');
+// const checkMaintenance = require('../middlewares/checkMaintenance');
+// const errorGrabber = require('../middlewares/errorGrabber');
 
 const not = (o) => !o;
 
