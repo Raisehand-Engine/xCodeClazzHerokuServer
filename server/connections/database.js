@@ -49,7 +49,7 @@ if (process.env.NODE_ENV === process.env.DEVELOPMENT) {
   connector.ENV = process.env.DEVELOPMENT;
 }
 if (process.env.NODE_ENV === process.env.PRODUCTION) {
-  connector.databaseName = 'Development';
+  connector.databaseName = 'Production';
   connector.ENV = process.env.PRODUCTION;
 }
 if (process.env.NODE_ENV === undefined) {
