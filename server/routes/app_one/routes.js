@@ -4,7 +4,7 @@ const router = express.Router();
 const APP_ONE_LOGIC = require('./logic');
 const _func = new APP_ONE_LOGIC();
 
-// const corsCheck = require('../../middlewares/corsChecker');
+const corsCheck = require('../../middlewares/corsChecker');
 
 // router.get(`/app`, corsCheck, async (req, res) => {
 //     const resultLimitCharacter = 30000;
