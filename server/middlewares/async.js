@@ -1,2 +1,2 @@
-const {asyncMiddleware} = require('./functions');
+const { asyncMiddleware } = require('./functions');
 module.exports = (handler) => asyncMiddleware(handler);
