@@ -48,7 +48,7 @@ app.get('/app', (req, res) => {
     // compilerArgs:
     // executionPath:
     // compilationPath:
-  }, (err, result) => res.send({ err, result: { connector, ...result, lang: 'python' } }));
+  }, (err, result) => res.send({ err, result: { ...result, lang: 'python' } }));
 });
 
 app.get(`/`, (req, res) => {
