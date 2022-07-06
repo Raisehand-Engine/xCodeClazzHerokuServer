@@ -1,0 +1,14 @@
+{
+    "projectType": "xcode_web",
+    "databaseName": "Testing",
+    "db_port": 27020,
+    "hostName": "localhost",
+    "user": "Null",
+    "replicaSetName": "rs1",
+    "url": "mongodb://localhost:27020/Testing?replicaSet=rs1",
+    "meta": {
+        "project-started": "1 July 2022",
+        "beta-release": "0.0.1",
+        "routeVersion": "/v1"
+    }
+}

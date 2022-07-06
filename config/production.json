@@ -1,0 +1,14 @@
+{
+    "projectType": "xcode_web",
+    "databaseName": "Production",
+    "db_port": 27017,
+    "hostName": "master.wwva8kk.mongodb.net",
+    "user": "GouravGupta",
+    "replicaSetName": "null",
+    "url": "mongodb+srv://xcodeclazz:hnPiCP0MZJA7pnWa@master.wwva8kk.mongodb.net/Production?retryWrites=true&w=majority",
+    "meta": {
+        "project-started": "1 July 2022",
+        "beta-release": "0.0.1",
+        "routeVersion": "/v1"
+    }
+}

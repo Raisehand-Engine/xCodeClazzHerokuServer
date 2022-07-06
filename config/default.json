@@ -1,0 +1,14 @@
+{
+    "projectType": "xcode_web",
+    "databaseName": "Development",
+    "db_port": 27020,
+    "hostName": "master.wwva8kk.mongodb.net",
+    "user": "GouravGupta",
+    "replicaSetName": "rs1",
+    "url": "mongodb://localhost:27020/Development?replicaSet=rs1",
+    "meta": {
+        "project-started": "1 July 2022",
+        "beta-release": "0.0.1",
+        "routeVersion": "/v1"
+    }
+}
