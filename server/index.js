@@ -48,7 +48,9 @@ const connector = {
 
 
 // connecting to mongo server...
-// const mongo = MongoClient.connect(connector.databaseUrl, { useNewUrlParser: true, useUnifiedTopology: true });
+const mongo = MongoClient.connect(connector.databaseUrl, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.Promise = global.Promise;
+mongoose.connect(connector.databaseUrl, connector.mongoOptions, () => winston.info(JSON.stringify(connector, null, 4)));
 
 
 app.post(`/post`, (req, res) => {
