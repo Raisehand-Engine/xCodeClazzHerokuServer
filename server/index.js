@@ -29,8 +29,7 @@ app.get('/app', (req, res) => {
 });
 
 app.get(`/`, (req, res) => {
-  // res.render('index');
-  res.send({message: 'api'})
+  res.render('index');
 });
 
 const PORT = process.env.PORT || 3000;

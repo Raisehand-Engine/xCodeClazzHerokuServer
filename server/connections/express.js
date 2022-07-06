@@ -9,7 +9,7 @@ const cookieParser = require('cookie-parser');
 
 const path = require('path');
 // dotenv.config({ path: path.join(__dirname, '..', '..', '.env') });
-// dotenv.config();
+dotenv.config();
 
 const cors_config = {
     origin: "*" // all
@@ -30,8 +30,8 @@ app.use(favicon(path.join(__dirname, '/../../images/logo192.png')));
 app.use(express.static('images'));
 app.use(express.static('styles'));
 
-// app.set('views', path.join(__dirname, '/../../views'));
-// app.set('view engine', 'hbs');
+app.set('views', path.join(__dirname, '/../../views'));
+app.set('view engine', 'hbs');
 
 // file indexes
 app.use('/uploads', express.static(path.join(__dirname, '/../../uploads')), serveIndex('uploads', { 'icons': true }))
