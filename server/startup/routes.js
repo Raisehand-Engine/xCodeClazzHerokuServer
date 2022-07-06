@@ -3,12 +3,12 @@ const _ = require('lodash');
 const Utils = require('../helper/utils');
 const RESPONSE = require('../classes/RESPONSER');
 
-// const {
-//     image_containers
-// } = require('../classes/RaisehandCloudinaryImageService');
+const {
+    image_containers
+} = require('../classes/RaisehandCloudinaryImageService');
 
-// const { version } = require('../connections/express');
-// const { mongo, connector } = require('../connections/database');
+const { version } = require('../connections/express');
+const { mongo, connector } = require('../connections/database');
 
 // const xcodeclazz_routes = require('../routes/xcodeclazz/routes');
 
@@ -21,11 +21,11 @@ module.exports = function (app) {
     // what is receiving, how important that data is,
 
     // hooking current environment name on every route 'req' param
-    // app.use((req, res, next) => {
-    //     // req.projectType = connector.projectType;
-    //     // req.env = connector.ENV;
-    //     next();
-    // });
+    app.use((req, res, next) => {
+        // req.projectType = connector.projectType;
+        // req.env = connector.ENV;
+        next();
+    });
 
     // app.use(`${version}/api/xcodeclazz`, xcodeclazz_routes);
 
