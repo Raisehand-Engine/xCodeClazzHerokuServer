@@ -10,18 +10,18 @@ const {
     stringLengthShouldBeMoreThenZero,
 } = require('../../helper/validatorHelper');
 
-// middlewares
-const validateRequestBody = require('../../middlewares/validateBody');
-const formDataParser = require('../../middlewares/formDataParser');
-const corsCheck = require('../../middlewares/corsChecker');
-const xray = require('../../middlewares/routeXRay');
+// // middlewares
+// const validateRequestBody = require('../../middlewares/validateBody');
+// const formDataParser = require('../../middlewares/formDataParser');
+// const corsCheck = require('../../middlewares/corsChecker');
+// const xray = require('../../middlewares/routeXRay');
 
-// connections
-const { express } = require('../../connections/express');
-const router = express.Router();
+// // connections
+// const { express } = require('../../connections/express');
+// const router = express.Router();
 
-const XCODECLAZZ_LOGIC = require('./logic');
-const _func = new XCODECLAZZ_LOGIC();
+// const XCODECLAZZ_LOGIC = require('./logic');
+// const _func = new XCODECLAZZ_LOGIC();
 
 // [Not Tested]
 // ...
