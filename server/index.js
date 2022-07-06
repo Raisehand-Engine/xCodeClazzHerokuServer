@@ -22,6 +22,35 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.set('views', path.join(__dirname, '/../views'));
 app.set('view engine', 'hbs');
 
+const {MongoClient, ObjectId} = require('mongodb'); // Plain Driver
+const mongoose = require('mongoose'); // ORM
+
+const winston = require('winston');
+const config = require('config');
+
+const connector = {
+  db_port: config.get('db_port'),
+  hostName: config.get('hostName'),
+  user: config.get('user'),
+  projectType: config.get('projectType'),
+  databaseName: config.get('databaseName'),
+  replicaSetName: config.get('replicaSetName'),
+  databaseUrl: config.get('url'),
+  mongoOptions: {
+    useNewUrlParser: true,
+    useFindAndModify: false,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+  },
+  meta: config.get('meta'),
+};
+
+
+
+// connecting to mongo server...
+// const mongo = MongoClient.connect(connector.databaseUrl, { useNewUrlParser: true, useUnifiedTopology: true });
+
+
 app.post(`/post`, (req, res) => {
   res.send({
     message: "You send these data's",
@@ -46,7 +75,7 @@ app.get('/app', (req, res) => {
     // compilerArgs:
     // executionPath:
     // compilationPath:
-  }, (err, result) => res.send({ err, result: { ...result, lang: 'python' } }));
+  }, (err, result) => res.send({ err, result: { connector, ...result, lang: 'python' } }));
 });
 
 app.get(`/`, (req, res) => {
