@@ -1,8 +1,8 @@
 const _ = require('lodash');
 const winston = require('winston');
-// const Utils = require('../helper/utils');
-// const RESPONSE = require('../classes/RESPONSER');
-// const { validationResult } = require('express-validator');
+const Utils = require('../helper/utils');
+const RESPONSE = require('../classes/RESPONSER');
+const { validationResult } = require('express-validator');
 
 const not = o => !o;
 
@@ -131,7 +131,7 @@ function headerChecker(req, res, next) {
 
 const userIdEquals = (field = undefined) => (req, res, next) => {
   if (_.isUndefined(field)) return new RESPONSE(res).forbidden(Utils.errBody('Please provide id, to match with current logged in user'));
-  else if (req.user?._id.toString() === req.body[field].toString()) next();
+  else if (req.user._id.toString() === req.body[field].toString()) next();
   else return new RESPONSE(res).forbidden(Utils.errBody('You are NOT the correct user to perfrom this action.'));
 }
 
@@ -230,7 +230,7 @@ function validateRequestBody(req, res, next) {
   if (not(errors.isEmpty())) {
     const lines = {};
     _.each(errors.array(), (err) => {
-      if (!lines[err?.param]) lines[err?.param] = `$~ '${err?.msg}' @${err?.location} = ${err?.param} -> ${JSON.stringify(err?.value)}`;
+      if (!lines[err.param]) lines[err.param] = `$~ '${err.msg}' @${err.location} = ${err.param} -> ${JSON.stringify(err.value)}`;
     });
     return new RESPONSE(res).unprocessableEntity(Utils.errBody(_.join(_.values(lines), ' | ')));
   }
