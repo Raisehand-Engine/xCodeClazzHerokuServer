@@ -11,7 +11,7 @@ const {
 } = require('../../helper/validatorHelper');
 
 // middlewares
-// const validateRequestBody = require('../../middlewares/validateBody');
+const validateRequestBody = require('../../middlewares/validateBody');
 // const formDataParser = require('../../middlewares/formDataParser');
 // const corsCheck = require('../../middlewares/corsChecker');
 // const xray = require('../../middlewares/routeXRay');
@@ -23,17 +23,17 @@ const router = express.Router();
 // const XCODECLAZZ_LOGIC = require('./logic');
 // const _func = new XCODECLAZZ_LOGIC();
 
-// [Not Tested]
-// ...
-router.get(`/status/students`,
-    formDataParser,
-    corsCheck,
-    xray,
-    [
+// // [Not Tested]
+// // ...
+// router.get(`/status/students`,
+//     formDataParser,
+//     corsCheck,
+//     xray,
+//     [
 
-    ], validateRequestBody, async (req, res) => {
-        await _func.getStudentsStatus(req, res);
-    });
+//     ], validateRequestBody, async (req, res) => {
+//         await _func.getStudentsStatus(req, res);
+//     });
 
 // // [Not Tested]
 // // ...
