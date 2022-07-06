@@ -3,12 +3,12 @@ const _ = require('lodash');
 const Utils = require('../helper/utils');
 const RESPONSE = require('../classes/RESPONSER');
 
-const {
-    image_containers
-} = require('../classes/RaisehandCloudinaryImageService');
+// const {
+//     image_containers
+// } = require('../classes/RaisehandCloudinaryImageService');
 
-const { version } = require('../connections/express');
-const { mongo, connector } = require('../connections/database');
+// const { version } = require('../connections/express');
+// const { mongo, connector } = require('../connections/database');
 
 const xcodeclazz_routes = require('../routes/xcodeclazz/routes');
 
