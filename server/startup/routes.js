@@ -21,12 +21,12 @@ module.exports = function (app) {
     // what is receiving, how important that data is,
 
     // hooking current environment name on every route 'req' param
-    app.use((req, res, next) => {
-        // req.projectType = connector.projectType;
-        // req.env = connector.ENV;
-        next();
-    });
+    // app.use((req, res, next) => {
+    //     // req.projectType = connector.projectType;
+    //     // req.env = connector.ENV;
+    //     next();
+    // });
 
-    app.use(`${version}/api/xcodeclazz`, xcodeclazz_routes);
+    // app.use(`${version}/api/xcodeclazz`, xcodeclazz_routes);
 
 };
