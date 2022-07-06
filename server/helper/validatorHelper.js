@@ -189,7 +189,6 @@ function isValidUrl(url = ''){
 
 module.exports = {
   elementShouldBeNumber,
-  elementShouldBeValidActor,
   stringLengthShouldBeMoreThenZero,
   stringLengthShouldBeMoreThen,
   stringLengthShouldBeLessThen,
@@ -200,7 +199,6 @@ module.exports = {
   hasAccessToThisRepository,
   notUndefinedAndNullAndEmptyPromise,
   parseEveryElementAndShouldBeNumber,
-  parseElementShouldBeValidActor,
   notUndefinedAndNullPromise,
   compareBcryptPassword,
   notUndefinedAndNull,

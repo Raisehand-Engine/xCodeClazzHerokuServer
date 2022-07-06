@@ -1,5 +1,4 @@
-const STATUS_CODE = require("../static data/raisehand_response_status_code");
-const ImageContainerConfig = require('../classes/ImageContainerConfig');
+const STATUS_CODE = require("../static data/response_status_code");
 
 class RESPONSE {
 

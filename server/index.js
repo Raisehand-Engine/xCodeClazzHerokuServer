@@ -1,35 +1,12 @@
-const express = require('express');
-const path = require('path');
-const cors = require('cors');
-const favicon = require('serve-favicon');
-const bodyParser = require('body-parser');
-const dotenv = require('dotenv');
+const winston = require('winston');
+const { app } = require('./connections/express');
 
+require('./startup/environment')();
+require('./startup/logging')();
+require('./startup/config')();
+require('./startup/mkdir')();
+require('./startup/routes')(app);
 require('./connections/database');
-
-dotenv.config();
-const cors_config = {
-  origin: "*" // all
-}
-
-const app = express();
-
-app.use(favicon(path.join(__dirname, '..' , 'images', 'logo192.png')));
-app.use(express.static('images'));
-app.use(express.static('styles'));
-app.use(bodyParser.json());
-app.use(cors(cors_config));
-app.use(bodyParser.urlencoded({ extended: true }));
-
-app.set('views', path.join(__dirname, '/../views'));
-app.set('view engine', 'hbs');
-
-app.post(`/post`, (req, res) => {
-  res.send({
-    message: "You send these data's",
-    body: req.body,
-  });
-});
 
 app.get('/app', (req, res) => {
   const resultLimitCharacter = 30000;
@@ -55,7 +32,9 @@ app.get(`/`, (req, res) => {
   res.render('index');
 });
 
-const port = process.env.PORT || 3000;
-app.listen(port, (req, res) => {
-  console.log(`server is running at PORT: ${port}`);
+const PORT = process.env.PORT || 3000;
+const server = app.listen(PORT, () => {
+  winston.info(`Server is up and running at port: ${PORT}`);
 });
+
+module.exports = app;

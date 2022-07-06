@@ -16,7 +16,7 @@ class HtmlTemplateGenerator {
 
     static boilerplate() {
         return `<!DOCTYPE html><html><head><style>table, th, td { border: 1px solid; } body { margin: 20px; box-shadow: 2px 2px 20px 2px rgba(0,0,0,.3); max-width: 30%; border-radius: 20px; } div.pad { padding: 15px; cursor: pointer; } </style></head>
-            <body><div class="pad"><strong>Raisehand Software Private Limited,</strong><br />Jamshedpur, Jharkhand, 832108</div><hr><div class="pad"><b>+91 89690 88400</b></div></body></html>`;
+            <body><div class="pad"><strong>My Company Inc,</strong><br />Jamshedpur, Jharkhand, 832108</div><hr><div class="pad"><b>+91 89690 88400</b></div></body></html>`;
     }
 
 }

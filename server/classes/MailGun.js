@@ -6,14 +6,14 @@ let mailgun = require('mailgun-js')({ apiKey: process.env.MAILGUN_API_KEY, domai
 class MailGun {
 
     constructor() {
-        this.adminEmail = 'raisehand.io@gmail.com';
-        this.backupEmail = 'gouravgupta840@gmail.com';
-        this.supportEmail = 'vinodgupta.rh@gmail.com';
+        this.adminEmail = 'email.io@gmail.com';
+        this.backupEmail = 'username840@gmail.com';
+        this.supportEmail = 'hola.rh@gmail.com';
 
         this.isProduction = process.env.NODE_ENV == process.env.PRODUCTION;
         this.host = this.isProduction ? process.env.ROOT_URL : 'http://localhost:' + CLIENT_PORT;
         this.mailGun_Tld = this.isProduction ? process.env.MAILGUN_TLD_LIVE : process.env.MAILGUN_TLD_SANDBOX;
-        this.header = { from: `Raisehand Software <raisehand@${this.mailGun_Tld}>` }
+        this.header = { from: `My Company <company@${this.mailGun_Tld}>` }
         this.defaultSuccessMessage = `An email has been sent successfully.`;
     }
 

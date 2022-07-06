@@ -1,7 +1,7 @@
 const chai = require('chai');
 const expect = chai.expect;
 const CHECK = require('./CHECK');
-const STATUS_CODE = require('../static data/raisehand_response_status_code');
+const STATUS_CODE = require('../static data/response_status_code');
 
 // These functions are directly tested which testing routes,
 // We hooked these codes in test cases, which also make sure

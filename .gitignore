@@ -1,1 +1,9 @@
-node_modules/
+node_modules
+.nyc_output
+coverage
+logfile.log
+uncaughtExceptions.log
+.env
+uploads
+.vscode
+.idea
