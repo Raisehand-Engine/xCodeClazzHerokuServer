@@ -10,7 +10,7 @@ const RESPONSE = require('../classes/RESPONSER');
 // const { version } = require('../connections/express');
 // const { mongo, connector } = require('../connections/database');
 
-const xcodeclazz_routes = require('../routes/xcodeclazz/routes');
+// const xcodeclazz_routes = require('../routes/xcodeclazz/routes');
 
 const not = (o) => !o;
 
