@@ -12,14 +12,14 @@ const cors_config = {
 
 const app = express();
 
-app.use(favicon(path.join(__dirname, 'images', 'logo192.png')));
+app.use(favicon(path.join(__dirname, '..' , 'images', 'logo192.png')));
 app.use(express.static('images'));
 app.use(express.static('styles'));
 app.use(bodyParser.json());
 app.use(cors(cors_config));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, '/../views'));
 app.set('view engine', 'hbs');
 
 app.post(`/post`, (req, res) => {
@@ -37,7 +37,7 @@ app.get('/app', (req, res) => {
   req.setTimeout(forMinutes); // because this route is going to do a lot havvy work!
 
   const { c, cpp, node, python, java } = require('compile-run');
-  python.runFile('./explorer/code/gouravgupta840@gmai.com/project_one/run.py', {
+  python.runFile('../explorer/code/gouravgupta840@gmai.com/project_one/run.py', {
     timeout: forMinutes,
     compileTimeout: forMinutes,
     stderrLimit: errorLimitCharacter,
