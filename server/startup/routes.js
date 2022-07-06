@@ -10,7 +10,7 @@ const {
 const { version } = require('../connections/express');
 const { mongo, connector } = require('../connections/database');
 
-const xcodeclazz_routes = require('../routes/xcodeclazz/routes');
+// const xcodeclazz_routes = require('../routes/xcodeclazz/routes');
 
 const not = (o) => !o;
 
@@ -27,6 +27,6 @@ module.exports = function (app) {
         next();
     });
 
-    app.use(`${version}/api/xcodeclazz`, xcodeclazz_routes);
+    // app.use(`${version}/api/xcodeclazz`, xcodeclazz_routes);
 
 };

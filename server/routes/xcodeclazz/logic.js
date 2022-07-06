@@ -25,7 +25,7 @@ class XCODECLAZZ_LOGIC {
         return new RESPONSE(res).ok({ students });
     }
     async getStudent(req, res) {
-        const student = await xCodeClazzStudent.findById(req.body?.studentId).populate('courses');
+        const student = await xCodeClazzStudent.findById(req.body.studentId).populate('courses');
         return new RESPONSE(res).ok({ student });
     }
     async createStudent(req, res) {
@@ -42,9 +42,9 @@ class XCODECLAZZ_LOGIC {
     }
     async updateStudent(req, res) { return new RESPONSE(res).ok({ message: 'please implement' }); }
     async deleteStudent(req, res) {
-        const studentDeleted = await xCodeClazzStudent.deleteOne({ _id: req.body?.studentId });
+        const studentDeleted = await xCodeClazzStudent.deleteOne({ _id: req.body.studentId });
         if (not(studentDeleted)) return new RESPONSE(res).bad(Utils.errBody('Unable to delete the student for some reason'));
-        return new RESPONSE(res).ok({ message: `student with id: ${req.body?.studentId} has been deleted` });
+        return new RESPONSE(res).ok({ message: `student with id: ${req.body.studentId} has been deleted` });
     }
 
     async getAllRequestCallbacks(req, res) {
@@ -52,7 +52,7 @@ class XCODECLAZZ_LOGIC {
         return new RESPONSE(res).ok({ callbacks });
     }
     async getRequestCallback(req, res) {
-        const callback = await xCodeClazzRequestCallback.findById(req.body?.requestCallbackId).populate('course');
+        const callback = await xCodeClazzRequestCallback.findById(req.body.requestCallbackId).populate('course');
         return new RESPONSE(res).ok({ callback });
     }
     async createRequestCallback(req, res) {
@@ -69,9 +69,9 @@ class XCODECLAZZ_LOGIC {
         });
     }
     async deleteRequestCallback(req, res) {
-        const callbackDeleted = await xCodeClazzRequestCallback.deleteOne({ _id: req.body?.requestCallbackId });
+        const callbackDeleted = await xCodeClazzRequestCallback.deleteOne({ _id: req.body.requestCallbackId });
         if (not(callbackDeleted)) return new RESPONSE(res).bad(Utils.errBody('Unable to delete the request callback for some reason'));
-        return new RESPONSE(res).ok({ message: `request callback with id: ${req.body?.requestCallbackId} has been deleted` });
+        return new RESPONSE(res).ok({ message: `request callback with id: ${req.body.requestCallbackId} has been deleted` });
     }
     async deleteAllRequestCallback(req, res) {
         const callbackDeleted = await xCodeClazzRequestCallback.deleteMany({});
@@ -84,7 +84,7 @@ class XCODECLAZZ_LOGIC {
         return new RESPONSE(res).ok({ courses });
     }
     async getCourse(req, res) {
-        const course = await xCodeClazzCourse.findById(req.body?.courseId);
+        const course = await xCodeClazzCourse.findById(req.body.courseId);
         return new RESPONSE(res).ok({ course });
     }
     async createCourse(req, res) {
@@ -127,9 +127,9 @@ class XCODECLAZZ_LOGIC {
         return new RESPONSE(res).ok({ message: 'xCodeCourse has been updated', document: doc });
     }
     async deleteCourse(req, res) {
-        const courseDeleted = await xCodeClazzCourse.deleteOne({ _id: req.body?.courseId });
+        const courseDeleted = await xCodeClazzCourse.deleteOne({ _id: req.body.courseId });
         if (not(courseDeleted)) return new RESPONSE(res).bad(Utils.errBody('Unable to delete the course for some reason'));
-        return new RESPONSE(res).ok({ message: `course with id: ${req.body?.courseId} has been deleted` });
+        return new RESPONSE(res).ok({ message: `course with id: ${req.body.courseId} has been deleted` });
     }
 
 }
