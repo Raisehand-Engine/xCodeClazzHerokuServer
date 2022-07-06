@@ -11,10 +11,10 @@ const { image_containers } = require('../../classes/RaisehandCloudinaryImageServ
 // } = require('../../helper/validatorHelper');
 
 // // middlewares
-const validateRequestBody = require('../../middlewares/validateBody');
-const formDataParser = require('../../middlewares/formDataParser');
-const corsCheck = require('../../middlewares/corsChecker');
-const xray = require('../../middlewares/routeXRay');
+// const validateRequestBody = require('../../middlewares/validateBody');
+// const formDataParser = require('../../middlewares/formDataParser');
+// const corsCheck = require('../../middlewares/corsChecker');
+// const xray = require('../../middlewares/routeXRay');
 
 // // connections
 const { express } = require('../../connections/express');
