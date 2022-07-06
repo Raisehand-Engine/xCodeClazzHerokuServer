@@ -20,8 +20,8 @@ const { image_containers } = require('../../classes/RaisehandCloudinaryImageServ
 const { express } = require('../../connections/express');
 const router = express.Router();
 
-const XCODECLAZZ_LOGIC = require('./logic');
-const _func = new XCODECLAZZ_LOGIC();
+// const XCODECLAZZ_LOGIC = require('./logic');
+// const _func = new XCODECLAZZ_LOGIC();
 
 // // [Not Tested]
 // // ...
