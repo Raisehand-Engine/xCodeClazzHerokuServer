@@ -7,14 +7,6 @@ const bcrypt = require('bcryptjs');
 const not = o => !o;
 
 // [Tested] [Indirectly]
-function hasRole(user, value) {
-  if (_.isUndefined(value) || _.isNull(value)) return false;
-  if (_.isUndefined(user) || _.isUndefined(user.roles)) return false;
-  var found = _.indexOf(user.roles, value);
-  return found != -1;
-}
-
-// [Tested] [Indirectly]
 function valuesHasNoError(params = [], cb) {
   let fine = 0;
   let totalParams = params.length;
@@ -37,49 +29,6 @@ function notUndefinedAndNullPromise(param) {
 // [Tested] [Indirectly]
 function notUndefinedAndNull(param, cb) {
   return !_.isUndefined(param) && !_.isNull(param) ? cb() : false;
-}
-
-// [Tested] [Indirectly]
-function isUserHasManagementRole(user) {
-  return notUndefinedAndNull(user, () => hasRole(user, ROLE.MANAGEMENT));
-}
-
-// [Tested] [Indirectly]
-function everyElementShouldBeValidRole(array) {
-  return notUndefinedAndNull(array, () => {
-    if (not(Array.isArray(array))) return false;
-
-    const bools = _.map(array, (v) => _.includes(_.values(ROLE), v));
-    if (bools.length == 0) return false;
-
-    const isCorrect = _.includes(bools, false);
-    return !isCorrect;
-  });
-}
-
-// [Not Tested]
-function parseEveryElementShouldBeValidRole(array) {
-  return notUndefinedAndNull(array, () => {
-    if (not(Array.isArray(array))) return false;
-
-    const bools = _.map(array, (v) => parseInt(v) !== NaN && _.includes(_.values(ROLE), parseInt(v)));
-    if (bools.length == 0) return false;
-
-    const isCorrect = _.includes(bools, false);
-    return !isCorrect;
-  });
-}
-
-// [Tested] [Indirectly]
-function elementShouldBeValidActor(actor) {
-  return notUndefinedAndNull(actor, () =>
-    _.includes(_.values(actorsNames), actor)
-  );
-}
-
-// [Not Tested]
-function parseElementShouldBeValidActor(actor) {
-  return notUndefinedAndNull(actor, () => parseInt(actor) !== NaN && _.includes(_.values(actorsNames), parseInt(actor)));
 }
 
 // [Tested]
@@ -240,9 +189,7 @@ function isValidUrl(url = ''){
 
 module.exports = {
   elementShouldBeNumber,
-  isUserHasManagementRole,
   elementShouldBeValidActor,
-  everyElementShouldBeValidRole,
   stringLengthShouldBeMoreThenZero,
   stringLengthShouldBeMoreThen,
   stringLengthShouldBeLessThen,
@@ -253,7 +200,6 @@ module.exports = {
   hasAccessToThisRepository,
   notUndefinedAndNullAndEmptyPromise,
   parseEveryElementAndShouldBeNumber,
-  parseEveryElementShouldBeValidRole,
   parseElementShouldBeValidActor,
   notUndefinedAndNullPromise,
   compareBcryptPassword,
@@ -262,6 +208,5 @@ module.exports = {
   isValidUrl,
   notUNE,
   notUN,
-  hasRole,
   isValidBarcode,
 };
