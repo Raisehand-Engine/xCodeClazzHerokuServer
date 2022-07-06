@@ -2,13 +2,13 @@ const _ = require('lodash');
 const { check } = require('express-validator');
 const { image_containers } = require('../../classes/RaisehandCloudinaryImageService');
 
-// const {
-//     everyElementShouldBeMongoId,
-//     everyElementShouldBeString,
-//     everyElementShouldBeNumber,
-//     stringLengthShouldBeMoreThen,
-//     stringLengthShouldBeMoreThenZero,
-// } = require('../../helper/validatorHelper');
+const {
+    everyElementShouldBeMongoId,
+    everyElementShouldBeString,
+    everyElementShouldBeNumber,
+    stringLengthShouldBeMoreThen,
+    stringLengthShouldBeMoreThenZero,
+} = require('../../helper/validatorHelper');
 
 // // middlewares
 // const validateRequestBody = require('../../middlewares/validateBody');
