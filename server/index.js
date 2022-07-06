@@ -5,6 +5,8 @@ const favicon = require('serve-favicon');
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
 
+require('./connections/database');
+
 dotenv.config();
 const cors_config = {
   origin: "*" // all
@@ -21,37 +23,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.set('views', path.join(__dirname, '/../views'));
 app.set('view engine', 'hbs');
-
-const {MongoClient, ObjectId} = require('mongodb'); // Plain Driver
-const mongoose = require('mongoose'); // ORM
-
-const winston = require('winston');
-const config = require('config');
-
-const connector = {
-  db_port: config.get('db_port'),
-  hostName: config.get('hostName'),
-  user: config.get('user'),
-  projectType: config.get('projectType'),
-  databaseName: config.get('databaseName'),
-  replicaSetName: config.get('replicaSetName'),
-  databaseUrl: config.get('url'),
-  mongoOptions: {
-    useNewUrlParser: true,
-    useFindAndModify: false,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-  },
-  meta: config.get('meta'),
-};
-
-
-
-// connecting to mongo server...
-const mongo = MongoClient.connect(connector.databaseUrl, { useNewUrlParser: true, useUnifiedTopology: true });
-mongoose.Promise = global.Promise;
-mongoose.connect(connector.databaseUrl, connector.mongoOptions, () => winston.info(JSON.stringify(connector, null, 4)));
-
 
 app.post(`/post`, (req, res) => {
   res.send({
