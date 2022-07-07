@@ -27,20 +27,20 @@ const connector = {
     meta: config.get('meta'),
 };
 
-if (process.env.NODE_ENV === process.env.TESTING) {
-    connector.databaseName = 'Testing';
-    connector.ENV = process.env.TESTING
+if (process.env.NODE_ENV === process.env.xCodeClazzTesting) {
+    connector.databaseName = 'xCodeClazzTesting';
+    connector.ENV = process.env.xCodeClazzTesting
 }
-if (process.env.NODE_ENV === process.env.DEVELOPMENT) {
-    connector.databaseName = 'Development';
-    connector.ENV = process.env.DEVELOPMENT;
+if (process.env.NODE_ENV === process.env.xCodeClazzDevelopment) {
+    connector.databaseName = 'xCodeClazzDevelopment';
+    connector.ENV = process.env.xCodeClazzDevelopment;
 }
-if (process.env.NODE_ENV === process.env.PRODUCTION) {
-    connector.databaseName = 'Development';
-    connector.ENV = process.env.PRODUCTION;
+if (process.env.NODE_ENV === process.env.xCodeClazzProduction) {
+    connector.databaseName = 'xCodeClazzProduction';
+    connector.ENV = process.env.xCodeClazzProduction;
 }
 if (process.env.NODE_ENV === undefined) {
-    process.env.NODE_ENV = process.env.DEVELOPMENT;
+    process.env.NODE_ENV = process.env.xCodeClazzDevelopment;
     connector.ENV = process.env.NODE_ENV;
 }
 

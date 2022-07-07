@@ -20,5 +20,5 @@ exports.errBodyWithStack = (errMessage, stack) => {
 };
 
 exports.dumpCatchedError = (err) => {
-  if (process.env.NODE_ENV !== process.env.TESTING) console.log('dumpCatchedError() ----->', err);
+  if (process.env.NODE_ENV !== process.env.xCodeClazzTesting) console.log('dumpCatchedError() ----->', err);
 }

@@ -43,8 +43,8 @@ const morgan = require('morgan'); // use morgan to log request incoming at comma
 // console.log(config) // return the .json file from config folder
 
 // only show the log when it is dev. don't turn this on while deploy on server i.e digital ocean
-if (config.util.getEnv('NODE_ENV') === process.env.DEVELOPMENT) app.use(morgan(`(${config.get('projectType')}) :method :url :status :res[content-length] - :response-time ms`)); // 'tiny' || 'combined' (outputs the Apache style LOGs)
-if (config.util.getEnv('NODE_ENV') === process.env.PRODUCTION) app.use(morgan(`(${config.get('projectType')}) :method :url :status :res[content-length] - :response-time ms`)); // 'tiny' || 'combined' (outputs the Apache style LOGs)
+if (config.util.getEnv('NODE_ENV') === process.env.xCodeClazzDevelopment) app.use(morgan(`(${config.get('projectType')}) :method :url :status :res[content-length] - :response-time ms`)); // 'tiny' || 'combined' (outputs the Apache style LOGs)
+if (config.util.getEnv('NODE_ENV') === process.env.xCodeClazzProduction) app.use(morgan(`(${config.get('projectType')}) :method :url :status :res[content-length] - :response-time ms`)); // 'tiny' || 'combined' (outputs the Apache style LOGs)
 const version = config.get('meta.routeVersion');
 
 module.exports = { app, express, version }

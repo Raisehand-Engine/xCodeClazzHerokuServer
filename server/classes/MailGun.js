@@ -10,7 +10,7 @@ class MailGun {
         this.backupEmail = 'username840@gmail.com';
         this.supportEmail = 'hola.rh@gmail.com';
 
-        this.isProduction = process.env.NODE_ENV == process.env.PRODUCTION;
+        this.isProduction = process.env.NODE_ENV == process.env.xCodeClazzProduction;
         this.host = this.isProduction ? process.env.ROOT_URL : 'http://localhost:' + CLIENT_PORT;
         this.mailGun_Tld = this.isProduction ? process.env.MAILGUN_TLD_LIVE : process.env.MAILGUN_TLD_SANDBOX;
         this.header = { from: `My Company <company@${this.mailGun_Tld}>` }

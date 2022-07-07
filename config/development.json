@@ -1,11 +1,11 @@
 {
     "projectType": "xcode_web",
-    "databaseName": "Development",
+    "databaseName": "xCodeClazzDevelopment",
     "db_port": 27020,
     "hostName": "master.wwva8kk.mongodb.net",
     "user": "GouravGupta",
     "replicaSetName": "rs1",
-    "url": "mongodb://localhost:27020/Development?replicaSet=rs1",
+    "url": "mongodb://localhost:27020/xCodeClazzDevelopment?replicaSet=rs1",
     "meta": {
         "project-started": "1 July 2022",
         "beta-release": "0.0.1",

@@ -38,7 +38,7 @@ function winstonLogger(err, req, res, next) {
 }
 
 function onlyDevelopmentEnv(req, res, next) {
-  if (req.env === process.env.DEVELOPMENT) next();
+  if (req.env === process.env.xCodeClazzDevelopment) next();
   else return new RESPONSE(res).bad(Utils.errBody('You cant use this route in production env'));
 }
 
