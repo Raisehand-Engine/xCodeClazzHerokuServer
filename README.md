@@ -10,3 +10,5 @@
 - [x]   Browser cache
 - [x]   File System / Code Save
 - [x]   Multiple Files Preview
+
+> REMEMBER: Crontab invokes this server in few interval
