@@ -79,6 +79,15 @@ const xCodeClazzCourseSchema = mongoose.Schema({
             required: true,
             min: 0
         },
+    },
+    keywords: {
+        type: [String],
+        validate: {
+            validator: function (v) {
+                return v && v.length > 0;
+            },
+            message: 'A course should have atleast one keyword',
+        },
     }
 }, { timestamps: true });
 

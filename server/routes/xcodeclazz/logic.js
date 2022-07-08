@@ -89,11 +89,11 @@ class XCODECLAZZ_LOGIC {
     }
     async createCourse(req, res) {
         const {
-            title, subtitle, duration, thumbnailUrl, imageContainer, features, price, hasActive, spaceLeft, spaceFull, session
-        } = _.pick(req.body, ['title', 'subtitle', 'duration', 'thumbnailUrl', 'imageContainer', 'features', 'price', 'hasActive', 'spaceLeft', 'spaceFull', 'session']);
+            title, subtitle, duration, thumbnailUrl, imageContainer, features, keywords, price, hasActive, spaceLeft, spaceFull, session
+        } = _.pick(req.body, ['title', 'subtitle', 'duration', 'thumbnailUrl', 'imageContainer', 'features', 'keywords', 'price', 'hasActive', 'spaceLeft', 'spaceFull', 'session']);
 
         const newCourse = await new xCodeClazzCourse({
-            title, subtitle, duration, thumbnailUrl, imageContainer, features, price, hasActive, spaceLeft, spaceFull, session
+            title, subtitle, duration, thumbnailUrl, imageContainer, features, keywords, price, hasActive, spaceLeft, spaceFull, session
         }).save();
 
         if (not(newCourse)) return new RESPONSE(res).bad(Utils.errBody("Something went wrong, try again"));
@@ -101,8 +101,8 @@ class XCODECLAZZ_LOGIC {
     }
     async updateCourse(req, res) {
         const {
-            courseId, title, subtitle, duration, thumbnailUrl, features, price, hasActive, spaceLeft, spaceFull, session
-        } = _.pick(req.body, ['courseId', 'title', 'subtitle', 'duration', 'thumbnailUrl', 'features', 'price', 'hasActive', 'spaceLeft', 'spaceFull', 'session']);
+            courseId, title, subtitle, duration, thumbnailUrl, features, keywords, price, hasActive, spaceLeft, spaceFull, session
+        } = _.pick(req.body, ['courseId', 'title', 'subtitle', 'duration', 'thumbnailUrl', 'features', 'keywords', 'price', 'hasActive', 'spaceLeft', 'spaceFull', 'session']);
 
         const doc = await xCodeClazzCourse.findById(courseId);
         if (not(doc)) return new RESPONSE(res).bad(Utils.errBody("Course can not update. cant find the course"));
@@ -115,6 +115,7 @@ class XCODECLAZZ_LOGIC {
         if (not(_.isUndefined(duration))) doc.duration = duration;
         if (not(_.isUndefined(thumbnailUrl))) doc.thumbnailUrl = thumbnailUrl;
         if (not(_.isUndefined(features))) doc.features = features;
+        if (not(_.isUndefined(keywords))) doc.keywords = keywords;
         if (not(_.isUndefined(price))) doc.price = price;
         if (not(_.isUndefined(hasActive))) doc.hasActive = hasActive;
         if (not(_.isUndefined(spaceLeft))) doc.spaceLeft = spaceLeft;
