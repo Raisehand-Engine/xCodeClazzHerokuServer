@@ -11,6 +11,7 @@ const { version } = require('../connections/express');
 const { mongo, connector } = require('../connections/database');
 
 const xcodeclazz_routes = require('../routes/xcodeclazz/routes');
+const compiler_routes = require('../routes/compiler/routes');
 
 const not = (o) => !o;
 
@@ -28,5 +29,6 @@ module.exports = function (app) {
     });
 
     app.use(`${version}/api/xcodeclazz`, xcodeclazz_routes);
+    app.use(`${version}/api/compiler`, compiler_routes);
 
 };
